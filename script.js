@@ -1,7 +1,7 @@
+
 function setLanguage(lang) {
   document.querySelectorAll('[data-tr]').forEach(el => {
-    el.textContent = el.getAttribute(`data-${lang}`);
+    el.innerText = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-tr');
   });
 }
-
-setLanguage('tr');
+window.onload = () => setLanguage('tr');
