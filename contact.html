@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>İletişim</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 data-tr="Hoş Geldiniz" data-en="Welcome" data-ar="مرحبًا">Hoş Geldiniz</h1>
+    <nav>
+      <a href="index.html" data-tr="Anasayfa" data-en="Home" data-ar="الصفحة الرئيسية">Anasayfa</a>
+      <a href="about.html" data-tr="Hakkımızda" data-en="About Us" data-ar="من نحن">Hakkımızda</a>
+      <a href="contact.html" data-tr="İletişim" data-en="Contact" data-ar="اتصل بنا">İletişim</a>
+    </nav>
+    <div class="language-switch">
+      <button onclick="setLanguage('tr')">TR</button>
+      <button onclick="setLanguage('en')">EN</button>
+      <button onclick="setLanguage('ar')">AR</button>
+    </div>
+  </header>
+
+  <main>
+    <h2 data-tr="Bize Ulaşın" data-en="Contact Us" data-ar="اتصل بنا">Bize Ulaşın</h2>
+
+<form action="https://formsubmit.co/agertul@gmail.com" method="POST">
+
+  <label for="isim">İsim:</label>
+  <input type="text" id="isim" name="isim" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="telefon">Telefon:</label>
+  <input type="text" id="telefon" name="telefon" required>
+
+  <label for="talep">Talep:</label>
+  <textarea id="talep" name="talep" required></textarea>
+
+  <!-- Form gönderildikten sonra yönlendirilecek sayfa (isteğe bağlı) -->
+  <input type="hidden" name="_next" value="https://agertul.github.io/ciftlik-sitesi/index.html">
+
+  <button type="submit">Gönder</button>
+</form>
+
+    <form action="form-gonder.php" method="post" class="contact-form">
+      <div>
+        <span data-tr="İsim Soyisim:" data-en="Full Name:" data-ar="الاسم الكامل:">İsim Soyisim:</span><br>
+        <input type="text" name="isim" required>
+      </div>
+
+      <div>
+        <span data-tr="Email:" data-en="Email:" data-ar="البريد الإلكتروني:">Email:</span><br>
+        <input type="email" name="email" required>
+      </div>
+
+      <div>
+        <span data-tr="Telefon:" data-en="Phone:" data-ar="الهاتف:">Telefon:</span><br>
+        <input type="text" name="telefon" required>
+      </div>
+
+      <div>
+        <span data-tr="Talebiniz:" data-en="Your Request:" data-ar="طلبك:">Talebiniz:</span><br>
+        <textarea name="talep" rows="5" required></textarea>
+      </div>
+
+      <button type="submit" data-tr="Gönder" data-en="Send" data-ar="إرسال">Gönder</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tüm hakları saklıdır.</p>
+  </footer>
+
+  <script>
+    function setLanguage(lang) {
+      localStorage.setItem("lang", lang);
+      translatePage(lang);
+    }
+
+    function translatePage(lang) {
+      const elements = document.querySelectorAll("[data-" + lang + "]");
+      elements.forEach(el => {
+        el.textContent = el.getAttribute("data-" + lang);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("lang") || "tr";
+      translatePage(savedLang);
+    });
+  </script>
+</body>
+</html>
