@@ -14,9 +14,9 @@ body {
 }
 
 header {
-  background: #006400;
+  background: #004d00;
   color: white;
-  padding: 1em;
+  padding: 0.5em;
   text-align: center;
 }
 
@@ -131,4 +131,317 @@ footer {
   background-color: transparent;
   color: #fff; /* açık tema için */
   text-shadow: 1px 1px 3px black;
+}
+.product-card p {
+  color: #333;  /* veya color: black; */
+  font-size: 15px;
+  margin: 5px 0;
+}
+.product-card h3 {
+  color: #111;  /* veya black ya da koyu bir renk */
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.language-selector {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 1000;
+}
+
+.language-selector button {
+  font-size: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+<section class="product-section">
+  <h2 data-tr="Diğer Koyun Türleri" data-en="Other Sheep Breeds" data-ar="أنواع أخرى من الأغنام">Diğer Koyun Türleri</h2>
+  
+  <div class="product-card">
+    <h3 data-tr="Kıvırcık Koyunu" data-en="Kivircik Sheep" data-ar="غنم كيفيرجيك">Kıvırcık Koyunu</h3>
+    <p data-tr="Marmara bölgesine özgüdür. Eti lezzetlidir fakat verimi düşüktür. Karacabey Merinos'a göre daha az et verimine sahiptir." 
+       data-en="Native to the Marmara region. Tasty meat but lower yield. Less productive than Karacabey Merinos." 
+       data-ar="أصلي من منطقة مرمرة. لحمه لذيذ لكن إنتاجه أقل من كراجابي مرينوس.">
+       Marmara bölgesine özgüdür. Eti lezzetlidir fakat verimi düşüktür. Karacabey Merinos'a göre daha az et verimine sahiptir.
+    </p>
+    <button onclick="showDetails('kivircik')">Detay</button>
+  </div>
+
+  <div class="product-card">
+    <h3 data-tr="Sakız Koyunu" data-en="Sakız Sheep" data-ar="غنم سكيز">Sakız Koyunu</h3>
+    <p data-tr="Süt verimi yüksektir ancak etlik performansı düşüktür. Genellikle süt için beslenir." 
+       data-en="High milk yield but low meat performance. Mainly raised for milk." 
+       data-ar="إنتاج الحليب مرتفع ولكن الأداء اللحمي ضعيف. يُربى عادة من أجل الحليب.">
+       Süt verimi yüksektir ancak etlik performansı düşüktür. Genellikle süt için beslenir.
+    </p>
+    <button onclick="showDetails('sakiz')">Detay</button>
+  </div>
+
+  <div class="product-card">
+    <h3 data-tr="İvesi Koyunu" data-en="Awassi Sheep" data-ar="غنم عواسي">İvesi Koyunu</h3>
+    <p data-tr="Güneydoğu Anadolu kökenlidir. Sıcağa dayanıklıdır, süt verimi iyidir ancak et kalitesi Karacabey Merinos’tan düşüktür." 
+       data-en="Originates from Southeast Anatolia. Heat-resistant, good milk yield but lower meat quality than Karacabey Merinos." 
+       data-ar="من أصل جنوب شرق الأناضول. مقاومة للحرارة، إنتاج الحليب جيد، لكن جودة اللحم أقل من مرينوس كراجابي.">
+       Güneydoğu Anadolu kökenlidir. Sıcağa dayanıklıdır, süt verimi iyidir ancak et kalitesi Karacabey Merinos’tan düşüktür.
+    </p>
+    <button onclick="showDetails('ivesi')">Detay</button>
+  </div>
+
+  <div class="product-card">
+    <h3 data-tr="Dağlıç Koyunu" data-en="Daglic Sheep" data-ar="غنم داغلج">Dağlıç Koyunu</h3>
+    <p data-tr="Orta Anadolu'ya özgüdür. Dayanıklıdır fakat büyüme hızı düşüktür. Et verimi sınırlıdır." 
+       data-en="Native to Central Anatolia. Hardy but slow-growing. Limited meat yield." 
+       data-ar="أصلي من وسط الأناضول. قوي ولكنه بطيء النمو. إنتاج اللحوم محدود.">
+       Orta Anadolu'ya özgüdür. Dayanıklıdır fakat büyüme hızı düşüktür. Et verimi sınırlıdır.
+    </p>
+    <button onclick="showDetails('daglic')">Detay</button>
+  </div>
+</section>
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: #004d00;
+  color: white;
+  padding: 0.5em;
+  text-align: center;
+}
+
+nav {
+  margin-top: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #90ee90;
+}
+
+.language-switch {
+  margin-top: 10px;
+  text-align: center;
+}
+
+main {
+  flex: 1;
+  padding: 2em 40px;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.social-icons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+  cursor: default;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #ffffff; /* Beyaz kutular */
+  color: #000000; /* Siyah yazı */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.contact-form button {
+  background-color: #228B22;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #32CD32;
+}
+.form-sonuc {
+  margin-top: 20px;
+  text-align: left;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+.form-sonuc {
+  background-color: transparent;
+  color: #fff; /* açık tema için */
+  text-shadow: 1px 1px 3px black;
+}
+.product-card p {
+  color: #333;  /* veya color: black; */
+  font-size: 15px;
+  margin: 5px 0;
+}
+.product-card h3 {
+  color: #111;  /* veya black ya da koyu bir renk */
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.language-selector {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 1000;
+}
+
+.language-selector button {
+  font-size: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+<section class="product-section">
+  <h2 data-tr="Diğer Koyun Türleri" data-en="Other Sheep Breeds" data-ar="أنواع أخرى من الأغنام">Diğer Koyun Türleri</h2>
+  
+  <div class="product-card">
+    <h3 data-tr="Kıvırcık Koyunu" data-en="Kivircik Sheep" data-ar="غنم كيفيرجيك">Kıvırcık Koyunu</h3>
+    <p data-tr="Marmara bölgesine özgüdür. Eti lezzetlidir fakat verimi düşüktür. Karacabey Merinos'a göre daha az et verimine sahiptir." 
+       data-en="Native to the Marmara region. Tasty meat but lower yield. Less productive than Karacabey Merinos." 
+       data-ar="أصلي من منطقة مرمرة. لحمه لذيذ لكن إنتاجه أقل من كراجابي مرينوس.">
+       Marmara bölgesine özgüdür. Eti lezzetlidir fakat verimi düşüktür. Karacabey Merinos'a göre daha az et verimine sahiptir.
+    </p>
+    <button onclick="showDetails('kivircik')">Detay</button>
+  </div>
+
+  <div class="product-card">
+    <h3 data-tr="Sakız Koyunu" data-en="Sakız Sheep" data-ar="غنم سكيز">Sakız Koyunu</h3>
+    <p data-tr="Süt verimi yüksektir ancak etlik performansı düşüktür. Genellikle süt için beslenir." 
+       data-en="High milk yield but low meat performance. Mainly raised for milk." 
+       data-ar="إنتاج الحليب مرتفع ولكن الأداء اللحمي ضعيف. يُربى عادة من أجل الحليب.">
+       Süt verimi yüksektir ancak etlik performansı düşüktür. Genellikle süt için beslenir.
+    </p>
+    <button onclick="showDetails('sakiz')">Detay</button>
+  </div>
+
+  <div class="product-card">
+    <h3 data-tr="İvesi Koyunu" data-en="Awassi Sheep" data-ar="غنم عواسي">İvesi Koyunu</h3>
+    <p data-tr="Güneydoğu Anadolu kökenlidir. Sıcağa dayanıklıdır, süt verimi iyidir ancak et kalitesi Karacabey Merinos’tan düşüktür." 
+       data-en="Originates from Southeast Anatolia. Heat-resistant, good milk yield but lower meat quality than Karacabey Merinos." 
+       data-ar="من أصل جنوب شرق الأناضول. مقاومة للحرارة، إنتاج الحليب جيد، لكن جودة اللحم أقل من مرينوس كراجابي.">
+       Güneydoğu Anadolu kökenlidir. Sıcağa dayanıklıdır, süt verimi iyidir ancak et kalitesi Karacabey Merinos’tan düşüktür.
+    </p>
+    <button onclick="showDetails('ivesi')">Detay</button>
+  </div>
+
+  <div class="product-card">
+    <h3 data-tr="Dağlıç Koyunu" data-en="Daglic Sheep" data-ar="غنم داغلج">Dağlıç Koyunu</h3>
+    <p data-tr="Orta Anadolu'ya özgüdür. Dayanıklıdır fakat büyüme hızı düşüktür. Et verimi sınırlıdır." 
+       data-en="Native to Central Anatolia. Hardy but slow-growing. Limited meat yield." 
+       data-ar="أصلي من وسط الأناضول. قوي ولكنه بطيء النمو. إنتاج اللحوم محدود.">
+       Orta Anadolu'ya özgüdür. Dayanıklıdır fakat büyüme hızı düşüktür. Et verimi sınırlıdır.
+    </p>
+    <button onclick="showDetails('daglic')">Detay</button>
+  </div>
+</section>
+
+}
+
+.marquee-text {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.marquee-text span {
+  display: inline-block;
+  padding-right: 8px;
+  animation: marquee-rtl 15s linear infinite;
+}
+
+.marquee-box {
+  background-color: #e0f4dc;
+  color: #155724;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 3px 0;
+  overflow: hidden;
+  position: relative;
+  height: 30px;
+}
+
+.marquee-ltr {
+  animation: marquee-ltr 15s linear infinite;
+}
+
+.marquee-rtl {
+  animation: marquee-rtl 35s linear infinite !important;
+}
+
+@keyframes marquee-ltr {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes marquee-rtl {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }

@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Talep Formu</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f0f0f0;
+      padding: 2em;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+      border-radius: 10px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #006400;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #228B22;
+    }
+  </style>
+</head>
+<body>
+
+<h2 style="text-align:center">Talep Formu</h2>
+<form action="form-gonder.php" method="POST">
+  <label>İsim Soyisim:</label>
+  <input type="text" name="isim" required>
+
+  <label>E-posta:</label>
+  <input type="email" name="email" required>
+
+  <label>Telefon:</label>
+  <input type="tel" name="telefon">
+
+  <label>Talebiniz:</label>
+  <textarea name="talep" rows="5" required></textarea>
+
+  <button type="submit">Gönder</button>
+</form>
+
+</body>
+</html>
