@@ -77,18 +77,19 @@ footer {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  color: darkgreen;
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
   max-width: 400px;
-  padding: 10px;
+  padding: 12px 15px;
   margin-bottom: 15px;
-  background-color: #ffffff; /* Beyaz kutular */
+  background-color: #000000; /* Beyaz kutular */
   color: #000000; /* Siyah yazı */
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 16px;
   box-sizing: border-box;
 }
@@ -137,6 +138,9 @@ footer {
   font-size: 15px;
   margin: 5px 0;
 }
+
+
+
 .product-card h3 {
   color: #111;  /* veya black ya da koyu bir renk */
   font-size: 18px;
@@ -200,67 +204,88 @@ footer {
     <button onclick="showDetails('daglic')">Detay</button>
   </div>
 </section>
-
+/* === GENEL AYARLAR === */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background-image: url('background.jpg');
+  font-family: 'Poppins', sans-serif;
+  background: url("arka-plan.jpg") no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   color: #fff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
+/* === HEADER & MENÜ === */
 header {
-  background: #004d00;
-  color: white;
-  padding: 0.5em;
+  background-color: rgba(0, 51, 0, 0.85); /* koyu yeşil şeffaf */
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  color: #fff;
   text-align: center;
 }
 
 nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-top: 10px;
-  text-align: center;
 }
 
 nav a {
-  color: white;
-  margin: 0 10px;
+  color: #fff;
   text-decoration: none;
+  margin: 10px 15px;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #90ee90;
+  color: #ffcc00;
 }
 
-.language-switch {
-  margin-top: 10px;
+/* === DİL SEÇİCİ === */
+.language-selector {
   text-align: center;
+  margin-top: 10px;
 }
 
-main {
-  flex: 1;
-  padding: 2em 40px;
+.language-selector button {
+  margin: 0 5px;
+  font-size: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
 }
 
+/* === ANA YAZI KUTUSU === */
+main section {
+  background-color: rgba(0, 0, 0, 0.5);  /* yarı saydam siyah kutu */
+  padding: 30px;
+  margin: 80px auto;
+  max-width: 700px;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+/* === FOOTER === */
 footer {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
   text-align: center;
-  padding: 10px 0;
-  font-size: 14px;
+  padding: 20px;
+  background-color: rgba(0, 51, 0, 0.9);
+  color: #fff;
 }
 
-.social-icons {
-  text-align: center;
-  margin-top: 10px;
+.social-icons img {
+  width: 30px;
+  margin: 0 10px;
+  vertical-align: middle;
 }
 
 .social-icons img {
@@ -444,4 +469,105 @@ footer {
 @keyframes marquee-rtl {
   0%   { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
+}
+
+.hero {
+  height: 450px;
+  background: url('background.jpg') center center / cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5); /* koyuluk ayarı */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  color: #fff;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background-color: #5c8a00;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #446600;
+}
+
+.sorgulama-kutusu {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  margin: 40px auto;
+  padding: 8px 5px;
+  max-width: 180px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  z-index: 5;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.sorgula-btn {
+  display: inline-block;
+  background-color: #2b7a0b;
+  color: white;
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.sorgula-btn:hover {
+  background-color: #388e3c;
+}
+
+.sorgulama-aciklama {
+  margin: 0;
+  font-size: 13px;
+  color: #333;
+}
+
+
+/* Küçük ekranlarda sabitliği kaldır, hizalı hale getir */
+@media (max-width: 768px) {
+  .sorgulama-kutusu {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 10px auto;
+    display: block;
+    }
 }

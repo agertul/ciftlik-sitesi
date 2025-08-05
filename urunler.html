@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ürünler</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 15px;
+    }
+    .card-body h3 {
+      margin: 0 0 10px;
+    }
+    .card-body p {
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ürünler</h1>
+    <div class="products">
+      <div class="card">
+        <img src="karacabey_merinos_etlik.jpg" alt="Karacabey Merinos Etlik">
+        <div class="card-body">
+          <h3>Karacabey Merinos (Etlik)</h3>
+          <p>Yüksek kaliteli et verimiyle bilinen Karacabey Merinos koyunları, hızlı gelişim gösterir ve verimli karkas yapısına sahiptir.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="karacabey_merinos_damizlik.jpg" alt="Karacabey Merinos Damızlık">
+        <div class="card-body">
+          <h3>Karacabey Merinos (Damızlık)</h3>
+          <p>Genetik olarak üstün damızlık özelliklere sahip olan bu koyunlar, verimli doğurganlık ve uyum yetenekleriyle dikkat çeker.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="kuzu_eti_paket.jpg" alt="Kuzu Eti Paket KG">
+        <div class="card-body">
+          <h3>Kuzu Eti (KG)</h3>
+          <p>Doğal besiyle yetiştirilen kuzu etleri, hijyenik şartlarda paketlenmiş ve yüksek besin değerine sahiptir.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

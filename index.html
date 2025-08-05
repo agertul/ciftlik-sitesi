@@ -7,8 +7,10 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1 data-tr="Çiftliğimize Hoş Geldiniz" 
+  <header class ="topbar">
+
+   
+ <h1 data-tr="Çiftliğimize Hoş Geldiniz" 
         data-en="Welcome to Our Farm" 
         data-ar="أهلاً بكم في مزرعتنا">Çiftliğimize Hoş Geldiniz</h1>
 
@@ -18,7 +20,15 @@
       <a href="products.html" data-tr="Ürünler" data-en="Products" data-ar="المنتجات">Ürünler</a>
       <a href="gallery.html" data-tr="Galeri" data-en="Gallery" data-ar="معرض الصور">Galeri</a>
       <a href="contact.html" data-tr="İletişim" data-en="Contact" data-ar="اتصل بنا">İletişim</a>
-    </nav>
+</nav>
+
+
+<div class="sorgulama-kutusu">
+  <a href="https://hayvanbilgi.tarim.gov.tr/" target="_blank" class="sorgula-btn">Küpe Sorgulama</a>
+  <p class="sorgulama-aciklama">
+    Sorgulama için Tarım ve Orman Bakanlığı'nın resmi sistemine yönlendirileceksiniz.
+  </p>
+</div>
 
    <div class="language-selector">
   <button onclick="setLanguage('tr')">🇹🇷</button>
@@ -29,8 +39,10 @@
   </header>
 
   <main>
-    <section>
-      <p data-tr="Damızlık ve etlik kuzu satışlarımız yakında başlayacaktır. Hayvanlarımız merada ve temiz ortamlarda beslenmektedir."
+ <section class="hero">
+  <div class="hero-overlay">
+    <div class="hero-content">
+<p data-tr="Damızlık ve etlik kuzu satışlarımız yakında başlayacaktır. Hayvanlarımız merada ve temiz ortamlarda beslenmektedir."
          data-en="Our breeding and meat lamb sales will start soon. Our animals are raised on pasture and in clean environments."
          data-ar="قريباً سنبدأ ببيع الخراف للتربية واللحم. حيواناتنا تُربى في المراعي وفي بيئات نظيفة.">
          Damızlık ve etlik kuzu satışlarımız yakında başlayacaktır...
@@ -45,10 +57,13 @@
          data-ar="الاتصال: سيتم مشاركته قريباً.">
          İrtibat: yakında paylaşılacaktır.
       </p>
-    </section>
+      <a href="contact.html" class="hero-btn" data-tr="İletişime Geç" data-en="Contact" data-ar="اتصل بنا">İletişime Geç</a>
+    </div>
+  </div>
+</section>
   </main>
 
-  <footer>
+  <footer class"footer">
     <p data-tr="©️ 2025 Tüm Hakları Saklıdır." 
        data-en="©️ 2025 All Rights Reserved." 
        data-ar="©️ 2025 جميع الحقوق محفوظة.">
