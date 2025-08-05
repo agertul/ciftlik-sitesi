@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title data-tr="Ürünler" data-en="Products" data-ar="المنتجات">Ürünler</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; }
+    nav { background-color: #333; padding: 10px; text-align: center; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+    .product-grid { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
+    .product-card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 250px;
+      margin: 15px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product-card img { width: 100%; height: auto; border-radius: 6px; }
+    .product-card h3 { margin: 10px 0 5px; }
+    .product-card p { margin: 5px 0; }
+    .product-card button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .product-card button:hover { background-color: #45a049; }
+    .language-selector {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    .language-selector button {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+    .details-box {
+      display: none;
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #333;
+      text-align: left;
+    }
+  </style>
+  <script>
+    function toggleDetails(id) {
+      const details = document.getElementById(id);
+      details.style.display = (details.style.display === "block") ? "none" : "block";
+    }
+
+    function setLanguage(lang) {
+      localStorage.setItem('lang', lang);
+      translatePage(lang);
+    }
+
+    function translatePage(lang) {
+      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        el.innerText = el.getAttribute('data-' + lang);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const lang = localStorage.getItem('lang') || 'tr';
+      translatePage(lang);
+    });
+  </script>
+</head>
+<body>
+  <div class="language-selector">
+    <button onclick="setLanguage('tr')">🇹🇷</button>
+    <button onclick="setLanguage('en')">🇬🇧</button>
+    <button onclick="setLanguage('ar')">🇸🇦</button>
+  </div>
+
+  <nav>
+    <a href="index.html" data-tr="Ana Sayfa" data-en="Home" data-ar="الصفحة الرئيسية">Ana Sayfa</a>
+    <a href="about.html" data-tr="Hakkımızda" data-en="About Us" data-ar="من نحن">Hakkımızda</a>
+    <a href="products.html" data-tr="Ürünler" data-en="Products" data-ar="المنتجات">Ürünler</a>
+    <a href="gallery.html" data-tr="Galeri" data-en="Gallery" data-ar="معرض الصور">Galeri</a>
+    <a href="contact.html" data-tr="İletişim" data-en="Contact" data-ar="اتصل بنا">İletişim</a>
+  </nav>
+
+  <h2 style="text-align:center;" data-tr="Ürünlerimiz" data-en="Our Products" data-ar="منتجاتنا">Ürünlerimiz</h2>
+
+<!-- Kayan yazı kutusu -->
+<div id="marqueeBox" class="marquee-box">
+<div id="marqueeText" class="marquee-text marquee-ltr" data-tr="Siparişleriniz için iletişim formundan bize ulaşabilirsiniz. Not: Görseller temsilidir." data-en="For your orders, please contact us via the contact form. Note: Images are for illustration only." data-ar="لطلباتكم، يمكنكم التواصل معنا من خلال نموذج الاتصال. ملاحظة: الصور لغرض التوضيح فقط.">
+
+    </div> 
+  </div>
+
+  <section class="product-grid">
+
+    <!-- Karacabey Merinos Etlik -->
+    <div class="product-card">
+      <img src="images/karacabey_merinos_etlik.jpg" alt="Karacabey Merinos Etlik">
+      <h3 data-tr="Karacabey Merinos Etlik" data-en="Karacabey Merino (Meat)" data-ar="كراكابي ميرينوس - لحم">Karacabey Merinos Etlik</h3>
+      <p data-tr="Hızlı gelişim ve yüksek et verimi sağlayan etlik ırk." data-en="Meat breed with fast growth and high yield." data-ar="سلالة لحمية سريعة النمو وعالية الإنتاج.">Hızlı gelişim ve yüksek et verimi sağlayan etlik ırk.</p>
+      <p><strong>Canlı: 250 TL/kg</strong></p>
+      <button data-tr="Sepete Ekle" data-en="Add to Cart" data-ar="أضف إلى السلة">Sepete Ekle</button>
+      <button onclick="toggleDetails('etlik-details')" data-tr="Detay" data-en="Details" data-ar="تفاصيل">Detay</button>
+      <div class="details-box" id="etlik-details"
+        data-tr="Bu ırk, açık alan besiciliğine uygundur. Yüksek karkas randımanı ile verimli bir yatırım sağlar."
+        data-en="This breed is suitable for open-field fattening. Offers high carcass yield and efficient investment."
+        data-ar="هذه السلالة مناسبة للتسمين في الهواء الطلق، وتوفر عائدًا عاليًا للذبيحة واستثمارًا فعالًا.">
+        Bu ırk, açık alan besiciliğine uygundur. Yüksek karkas randımanı ile verimli bir yatırım sağlar.
+      </div>
+    </div>
+
+    <!-- Karacabey Merinos Damızlık -->
+    <div class="product-card">
+      <img src="images/karacabey_merinos_damizlik.jpg" alt="Karacabey Merinos Damızlık">
+      <h3 data-tr="Karacabey Merinos Damızlık" data-en="Karacabey Merino (Breeding)" data-ar="كراكابي ميرينوس - تربية">Karacabey Merinos Damızlık</h3>
+      <p data-tr="Verimli doğurganlık oranına sahip, kaliteli damızlık koyun." data-en="High fertility and quality breeding sheep." data-ar="أغنام للتربية ذات خصوبة عالية وجودة.">Verimli doğurganlık oranına sahip, kaliteli damızlık koyun.</p>
+      <p><strong>Baş: 17.000 TL</strong></p>
+      <button data-tr="Sepete Ekle" data-en="Add to Cart" data-ar="أضف إلى السلة">Sepete Ekle</button>
+      <button onclick="toggleDetails('damizlik-details')" data-tr="Detay" data-en="Details" data-ar="تفاصيل">Detay</button>
+      <div class="details-box" id="damizlik-details"
+        data-tr="Genetik olarak üstün bireylerden seçilmiş, süt ve döl verimi yüksek damızlıklar sunuyoruz."
+        data-en="Our breeding stock is selected from genetically superior individuals with high milk and reproductive efficiency."
+        data-ar="نقدم سلالات للتربية مختارة وراثياً، بإنتاج حليب وخصوبة عاليين.">
+        Genetik olarak üstün bireylerden seçilmiş, süt ve döl verimi yüksek damızlıklar sunuyoruz.
+      </div>
+    </div>
+
+    <!-- Kuzu Eti Paket -->
+    <div class="product-card">
+      <img src="images/kuzu_eti_paket.jpg" alt="Kuzu Eti Paket">
+      <h3 data-tr="Kuzu Eti Paket" data-en="Lamb Meat Pack" data-ar="علبة لحم الخروف">Kuzu Eti Paket</h3>
+      <p data-tr="Hijyenik koşullarda hazırlanmış 1 kg'lık vakumlu paket." data-en="1kg vacuum-packed, hygienically processed." data-ar="معبأة تحت التفريغ في عبوات 1 كغ.">Hijyenik koşullarda hazırlanmış 1 kg'lık vakumlu paket.</p>
+      <p><strong>500 TL/kg</strong></p>
+      <button data-tr="Sepete Ekle" data-en="Add to Cart" data-ar="أضف إلى السلة">Sepete Ekle</button>
+      <button onclick="toggleDetails('paket-details')" data-tr="Detay" data-en="Details" data-ar="تفاصيل">Detay</button>
+      <div class="details-box" id="paket-details"
+        data-tr="Etlerimiz günlük kesim sonrası vakumla paketlenir ve soğuk zincirle gönderilir. %100 doğal ve katkısızdır."
+        data-en="Our meats are vacuum-packed after daily slaughter and delivered via cold chain. 100% natural and additive-free."
+        data-ar="يتم تغليف لحومنا بتفريغ الهواء بعد الذبح اليومي وتوصيلها بسلسلة تبريد. طبيعية 100٪ وخالية من الإضافات.">
+        Etlerimiz günlük kesim sonrası vakumla paketlenir ve soğuk zincirle gönderilir. %100 doğal ve katkısızdır.
+      </div>
+    </div>
+
+  </section>
+<section class="product-section">
+   <h2 data-tr="Diğer Koyun Türleri" data-en="Other Sheep Breeds" data-ar="أنواع أخرى من الأغنام">Diğer Koyun Türleri</h2>
+  
+  <div class="product-card">
+    <h3 data-tr="Kıvırcık Koyunu" data-en="Kivircik Sheep" data-ar="غنم كيفيرجيك">Kıvırcık Koyunu</h3>
+    <p data-tr="Marmara bölgesine özgüdür. Eti lezzetlidir fakat verimi düşüktür. Karacabey Merinos'a göre daha az et verimine sahiptir." 
+       data-en="Native to the Marmara region. Tasty meat but lower yield. Less productive than Karacabey Merinos." 
+       data-ar="أصلي من منطقة مرمرة. لحمه لذيذ لكن إنتاجه أقل من كراجابي مرينوس.">
+       Marmara bölgesine özgüdür. Eti lezzetlidir fakat verimi düşüktür. Karacabey Merinos'a göre daha az et verimine sahiptir.
+    </p>
+    <button onclick="showDetails('kivircik')">Detay</button>
+  </div>
+
+  <div class="product-card">
+    <h3 data-tr="Sakız Koyunu" data-en="Sakız Sheep" data-ar="غنم سكيز">Sakız Koyunu</h3>
+    <p data-tr="Süt verimi yüksektir ancak etlik performansı düşüktür. Genellikle süt için beslenir." 
+       data-en="High milk yield but low meat performance. Mainly raised for milk." 
+       data-ar="إنتاج الحليب مرتفع ولكن الأداء اللحمي ضعيف. يُربى عادة من أجل الحليب.">
+       Süt verimi yüksektir ancak etlik performansı düşüktür. Genellikle süt için beslenir.
+    </p>
+    <button onclick="showDetails('sakiz')">Detay</button>
+  </div>
+
+  <div class="product-card">
+    <h3 data-tr="İvesi Koyunu" data-en="Awassi Sheep" data-ar="غنم عواسي">İvesi Koyunu</h3>
+    <p data-tr="Güneydoğu Anadolu kökenlidir. Sıcağa dayanıklıdır, süt verimi iyidir ancak et kalitesi Karacabey Merinos’tan düşüktür." 
+       data-en="Originates from Southeast Anatolia. Heat-resistant, good milk yield but lower meat quality than Karacabey Merinos." 
+       data-ar="من أصل جنوب شرق الأناضول. مقاومة للحرارة، إنتاج الحليب جيد، لكن جودة اللحم أقل من مرينوس كراجابي.">
+       Güneydoğu Anadolu kökenlidir. Sıcağa dayanıklıdır, süt verimi iyidir ancak et kalitesi Karacabey Merinos’tan düşüktür.
+    </p>
+    <button onclick="showDetails('ivesi')">Detay</button>
+  </div>
+
+  <div class="product-card">
+    <h3 data-tr="Dağlıç Koyunu" data-en="Daglic Sheep" data-ar="غنم داغلج">Dağlıç Koyunu</h3>
+    <p data-tr="Orta Anadolu'ya özgüdür. Dayanıklıdır fakat büyüme hızı düşüktür. Et verimi sınırlıdır." 
+       data-en="Native to Central Anatolia. Hardy but slow-growing. Limited meat yield." 
+       data-ar="أصلي من وسط الأناضول. قوي ولكنه بطيء النمو. إنتاج اللحوم محدود.">
+       Orta Anadolu'ya özgüdür. Dayanıklıdır fakat büyüme hızı düşüktür. Et verimi sınırlıdır.
+    </p>
+    <button onclick="showDetails('daglic')">Detay</button>
+  </div>
+</section>
+<script>
+  // Yerel depoda sepet varsa onu al, yoksa boş dizi başlat
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Sepete ekle fonksiyonu
+  document.querySelectorAll('button[data-tr="Sepete Ekle"]').forEach(button => {
+  button.addEventListener('click', function () {
+    const productCard = this.closest('.product-card');
+    const productName = productCard.querySelector('h3').innerText;
+    const description = productCard.querySelector('p').innerText;
+
+    // Mevcut sepette varsa quantity'yi artır
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existing = cart.find(item => item.name === productName);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cart.push({ name: productName, description: description, quantity: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(productName + " sepete eklendi!");
+  });
+});
+</script>
+</body>
+</html>
