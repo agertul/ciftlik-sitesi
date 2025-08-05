@@ -570,4 +570,11 @@ footer {
     margin: 10px auto;
     display: block;
     }
+  @media (max-width: 768px) {
+  .main-text {
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    }
 }
